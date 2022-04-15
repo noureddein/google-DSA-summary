@@ -50,12 +50,16 @@
     a single manatee has properties like "name", "age", et cetera </br>
     n = the number of elements in "manatees"</br>
     m = the number of properties per "manatee" (i.e. the number of keys in a manatee dictionary)</br>
-    manatees = [
-        "manatee1":{
-            "name": ,
-            "age":
-        }
-    ]
+    manatees = [</br>
+        "manatee1":{</br>
+            "name": ,</br>
+            "age":</br>
+        },</br>
+        "manatee2":{</br>
+            "name": ,</br>
+            "age":</br>
+        }</br>
+    ]</br>
 </p>
 
 
@@ -64,12 +68,16 @@ def example1(manatees):
     for manatee in manatees:
         print manatee['name']
 ```
+<span>Ex1: Big-O(n) for time, Big-O(1) for space </span>
+
 
 ```
 def example2(manatees):
     print manatees[0]['name']
     print manatees[0]['age']
 ```
+<span>Ex2: Big-O(1) for time, Big-O(1) for space </span>
+
 
 ```
 def example3(manatees):
@@ -77,6 +85,8 @@ def example3(manatees):
         for manatee_property in manatee:
             print manatee_property, ": ", manatee[manatee_property]
 ```
+<span>Ex3: Big-O(n<sup>2</sup>) for time, Big-O(1) for space </span>
+
 
 ```
 def example4(manatees):
@@ -89,3 +99,21 @@ def example4(manatees):
                 oldest_manatee = manatee1['name']
     print oldest_manatee
 ```
+<span>Ex4: Big-O(n<sup>2</sup>) for time, Big-O(1) for space </span>
+
+
+### Here are the answers and explanations:
+
+  - Example 1
+     - We iterate over every manatee in the manatees list with the for loop. Since we're given that manatees has n elements, our code will take approximately O(n) time to run.
+
+  - Example 2
+     - We look at two specific properties of a specific manatee. We aren't iterating over anything - just doing constant-time lookups on lists and dictionaries. Thus the code will complete in constant, or O(1), time.
+
+  - Example 3
+     - There are two for loops, and nested for loops are a good sign that you need to multiply two runtimes. Here, for every manatee, we check every property. If we had 4 manatees, each with 5 properties, then we would need 5+5+5+5 steps. This logic simplifies to the number of manatees times the number of properties, or O(nm).
+
+  - Example 4
+     - Again we have nested for loops. This time we're iterating over the manatees list twice - every time we see a manatee, we compare it to every other manatee's age. We end up with O(nn), or O(n^2) (which is read as "n squared").
+
+    - Throughout the course, you can reference the Big-O Cheat Sheet to keep track of time complexities for many of the algorithms and data structures we study.
