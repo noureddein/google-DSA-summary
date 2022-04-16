@@ -1,9 +1,9 @@
 # Table of content
 
 
-| lesson | link |
+| lessons | link |
 | ----------- | ----------- |
-| Intro | [Efficiency](./efficieny.md) |
-| Intro | [Notation](./notation.md) |
-| Intro | []() |
-| Intro | []() |
+| Intro | [Efficiency](./part-01/efficiency.md) |
+| Intro | [Notation](./part-01/notation.md) |
+| Collections | [Lists and Arrays](./part-02/lists) |
+| Collections | []() |
